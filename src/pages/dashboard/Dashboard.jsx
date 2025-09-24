@@ -69,7 +69,7 @@ const Dashboard = ({ currentUser }) => {
               className="w-32 h-32 rounded-full object-cover border-4 border-blue-500"
             />
             <div className="flex-1">
-              <h1 className="text-2xl font-bold">{profile.name}</h1>
+              <h1 className="text-2xl font-bold">{user.name}</h1>
               <p className="text-gray-500">{profile.email}</p>
               <p className="mt-3 text-gray-700">{profile.bio || "No bio added yet."}</p>
             </div>

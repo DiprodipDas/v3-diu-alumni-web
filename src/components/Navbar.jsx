@@ -4,11 +4,11 @@ import { useAuth } from '../context/AuthContext'
 
 const Navbar = () => {
 
-    const { user,logout} = useAuth()
+    const { user, logout } = useAuth()
     console.log(user)
 
 
-    const handleLogOut=()=>{
+    const handleLogOut = () => {
         logout();
     }
     return (
@@ -63,9 +63,14 @@ const Navbar = () => {
             <div className="navbar-end">
 
                 {
-                    user ? (<><Link to='/dashboard' className="btn btn-outline btn-primary px-8 hidden sm:flex">Dashboard</Link>
-                        <button onClick={handleLogOut} className="btn btn-primary text-white ml-4">Log Out</button></>) : (<><Link to='/login' className="btn btn-outline btn-primary px-8 hidden sm:flex">Log in</Link>
-                            <Link to='/Pricing' className="btn btn-primary text-white ml-4">Start Free Trial</Link></>)
+                    user ? (<>
+                        <div className='inline-flex '><h2 className='text-sm text-gray-500 p-6'>{user.email}</h2>
+                        <img className='w-8 h-8 mt-5 rounded-full' src={user.photoURL} alt="" />
+                        </div>
+                        <Link to='/dashboard' className="btn btn-outline btn-primary px-8 hidden sm:flex">Dashboard</Link>
+                        <button onClick={handleLogOut} className="btn btn-primary text-white ml-4">Log Out</button></>
+                    ) : (<><Link to='/login' className="btn btn-outline btn-primary px-8 hidden sm:flex">Log in</Link>
+                        <Link to='/Pricing' className="btn btn-primary text-white ml-4">Start Free Trial</Link></>)
                 }
 
             </div>
