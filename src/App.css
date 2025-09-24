@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@keyframes scroll{
+0%{
+transform: translateX(100%);
+}
+
+100%{
+transform: translateX(-100%);
+}
+}
+.animate-scroll{
+    display: inline-flex;
+    animation: scroll 25s linear infinite;
+}
